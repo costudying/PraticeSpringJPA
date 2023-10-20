@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 수정</title>
+</head>
+<body>
+<h1>주문자 수정</h1>
+
+<form action="/order/modify" method="post">
+    <label>수정할 주문 번호 : </label>
+    <input type="number" name="orderId"><br>
+    <label>수정할 주문자 이름 : </label>
+    <input type="text" name="orderer"><br>
+    <input type="submit" value="주문 수정">
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 등록</title>
+</head>
+<body>
+<h1>주문 신규 등록</h1>
+
+<form action="/order/regist" method="post">
+    <label>주문자 : </label><input type="text" name="orderer"><br/>
+    <label>주문 가격 : </label><input type="number" name="orderPrice"><br/>
+    <label>주문 상태 : </label>
+    <select name="orderStatus" id="orderStatus"></select><br/>
+    <label>주문 일자 : </label><input type="text" name="orderDate"><br/>
+    <label>사이즈 : </label>
+    <select name="size">
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+    </select>
+    <input type="submit" value="주문 등록">
+</form>
+
+<script>
+    fetch('/order/category')
+    .then(res => res.json())
+    .then(data => {
+        const $orderStatus = document.getElementById('orderStatus');
+
+        for(let index in data){
+            const $option = document.createElement('option');
+            $option.value = data[index].orderStatus;
+            $option.textContent = data[index].status;
+
+            $orderStatus.appendChild($option);
+        }
+    })
+</script>
+</body>
+</html>

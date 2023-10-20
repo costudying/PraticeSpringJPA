@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>선택된 주문 정보</title>
+</head>
+<body>
+<h1>선택된 주문 조회</h1>
+<table>
+    <tr>
+        <th>주문번호</th>
+        <th>주문날짜</th>
+        <th>주문가격</th>
+        <th>주문자</th>
+        <th>사이즈</th>
+        <th>주문상태</th>
+    </tr>
+    <tr>
+        <th th:text="${ order.orderId }"></th>
+        <th th:text="${ order.orderDate }"></th>
+        <th th:text="${ order.orderPrice }"></th>
+        <th th:text="${ order.orderer }"></th>
+        <th th:text="${ order.size }"></th>
+        <th th:text="${ order.orderStatus}"></th>
+    </tr>
+</table>
+</body>
+</html>
